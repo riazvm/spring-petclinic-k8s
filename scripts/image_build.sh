@@ -4,7 +4,7 @@ set -e
 
 if [ -z "$CI_REGISTRY_IMAGE" ]; then
     echo "warning: \$CI_REGISTRY_IMAGE is unset"
-    CI_REGISTRY_IMAGE=harbor.corp.local
+    CI_REGISTRY_IMAGE=harbor.corp.local/petclinic
     CI_COMMIT_SHA=latest
 fi
 
