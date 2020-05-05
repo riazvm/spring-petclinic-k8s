@@ -53,10 +53,10 @@ fi
 
 for module in "${spc_modules[@]}"
 do
-    image_path=${CI_REGISTRY_IMAGE}/${module}
+    image_path=${CI_REGISTRY_IMAGE}/${module}:${CI_COMMIT_SHA}
     image_version=${image_path}:${spc_version}
 
-    docker tag ${image_path}:${CI_COMMIT_SHA} ${image_version}
-    docker tag ${image_path}:${CI_COMMIT_SHA} ${image_path}:latest
+#    docker tag ${image_path}:${CI_COMMIT_SHA} ${image_version}
+#    docker tag ${image_path}:${CI_COMMIT_SHA} ${image_path}:latest
     docker push ${image_path}
 done
