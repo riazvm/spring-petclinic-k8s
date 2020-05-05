@@ -4,8 +4,8 @@ set -e
 
 if [ -z "$CI_REGISTRY_IMAGE" ]; then
     echo "warning: \$CI_REGISTRY_IMAGE is unset"
-    CI_REGISTRY_IMAGE=local-build
-    CI_COMMIT_SHA=local-dirty
+    CI_REGISTRY_IMAGE=harbor.corp.local
+    CI_COMMIT_SHA=latest
 fi
 
 if [[ -f ./target/modules.info ]]; then
@@ -15,22 +15,22 @@ else
     exit 1
 fi
 
-if [[ -f ./target/version.info ]]; then
-    spc_version=$(<./target/version.info)
-else
-    echo "error: version.info is missing"
-    exit 1
-fi
+#if [[ -f ./target/version.info ]]; then
+#    spc_version=$(<./target/version.info)
+#else
+#    echo "error: version.info is missing"
+#    exit 1
+#fi
 
-if [[ ! -d ./target/artifacts ]]; then
-    echo "error: artifacts are missing"
-    exit 1
-fi
+#if [[ ! -d ./target/artifacts ]]; then
+#    echo "error: artifacts are missing"
+#    exit 1
+#fi
 
 # build
 for module in "${spc_modules[@]}"
 do
-    artifact_name=${module}-${spc_version}
+    artifact_name=${module}-2.0.5
     artifact_file=${artifact_name}.jar
     artifact_path=./target/artifacts/${artifact_file}
 
