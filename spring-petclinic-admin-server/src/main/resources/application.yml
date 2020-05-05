@@ -1,0 +1,6 @@
+# keep it standard
+server.port: 8080
+spring.application.name: admin-server
+
+# Logging
+logging.level.org.springframework: INFO
