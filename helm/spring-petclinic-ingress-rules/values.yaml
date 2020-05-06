@@ -1,2 +1,2 @@
 ingress:
-  hosts: ["spc.lab.nashdocker.io"]
+  hosts: ["spc.corp.local"]

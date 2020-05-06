@@ -29,6 +29,6 @@ public class CustomersServiceClient {
     private final RestTemplate loadBalancedRestTemplate;
 
     public OwnerDetails getOwner(final int ownerId) {
-        return loadBalancedRestTemplate.getForObject("http://customers-service:8080/owners/{ownerId}", OwnerDetails.class, ownerId);
+        return loadBalancedRestTemplate.getForObject("http://customers-service/owners/{ownerId}", OwnerDetails.class, ownerId);
     }
 }
