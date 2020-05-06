@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ -f ./target/modules.info ]]; then
-    readarray -t spc_modules < ./target/modules.info
+    readarray -t spc_modules < ./scripts/modules.info
 else
     echo "error: modules.info file is missing"
     exit 1
