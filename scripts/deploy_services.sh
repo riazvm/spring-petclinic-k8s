@@ -56,9 +56,9 @@ do
 
     image_path=harbor.corp.local/petclinic/${module}
 
-    #if [[ "$service_name" == "admin-server" ]]; then
-    #    INGRESS_OVERRIDE="ingress.hosts={admin.${WILDCARD_HOST}},"
-    #fi
+    if [[ "$service_name" == "admin-server" ]]; then
+        INGRESS_OVERRIDE="ingress.hosts={admin.${WILDCARD_HOST}},"
+    fi
 
     echo
    # echo "Deploying ${image_path} (git ${CI_COMMIT_TAG:-$CI_COMMIT_REF_NAME} $CI_COMMIT_SHA)"
