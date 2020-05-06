@@ -19,7 +19,7 @@ readinessProbe:
 ## Persist data to a persistent volume
 persistence:
   enabled: true
-  storageClass: "standard"
+  storageClass: "thin-disk"
   accessMode: ReadWriteOnce
   size: 8Gi
   annotations: {}
