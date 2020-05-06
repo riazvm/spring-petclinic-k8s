@@ -1,0 +1,39 @@
+image: "mysql"
+imageTag: "5.7.14"
+mysqlRootPassword: petclinic
+mysqlDatabase: petclinic
+imagePullPolicy: IfNotPresent
+nodeSelector: {}
+livenessProbe:
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
+  successThreshold: 1
+  failureThreshold: 3
+readinessProbe:
+  initialDelaySeconds: 5
+  periodSeconds: 10
+  timeoutSeconds: 1
+  successThreshold: 1
+  failureThreshold: 3
+## Persist data to a persistent volume
+persistence:
+  enabled: true
+  storageClass: "thin-disk"
+  accessMode: ReadWriteOnce
+  size: 8Gi
+  annotations: {}
+resources:
+  requests:
+    memory: 256Mi
+    cpu: 100m
+configurationFiles: {}
+initializationFiles: {}
+service:
+  type: ClusterIP
+  port: 3306
+ssl:
+  enabled: false
+  secret: mysql-ssl-certs
+  certificates:
+podAnnotations: {}

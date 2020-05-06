@@ -37,9 +37,11 @@ KUBE_NAMESPACE="${KUBE_NAMESPACE:-default}"
 #  spc-ingress-rules helm/spring-petclinic-ingress-rules
 
 # get stable repo
-helm repo update
+
 
 helm repo add bitnami https://charts.bitnami.com/bitnami
+
+helm repo update
 
 helm install my-release --namespace spc -f helm/spring-petclinic-database-server/values.yaml bitnami/mysql
 
