@@ -43,7 +43,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 
 helm repo update
 
-helm install my-release --namespace spc -f helm/spring-petclinic-database-server/values.yaml bitnami/mysql
+helm install my-release --namespace spc --set=fullnameOverride=database-server -f helm/spring-petclinic-database-server/values.yaml stable/mysql
 
 # database server for petclinic application
 # helm upgrade --install --reset-values \
