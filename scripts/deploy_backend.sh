@@ -39,11 +39,11 @@ KUBE_NAMESPACE="${KUBE_NAMESPACE:-default}"
 # get stable repo
 
 
-helm repo add bitnami https://charts.bitnami.com/bitnami
+#helm repo add bitnami https://charts.bitnami.com/bitnami
 
 helm repo update
 
-helm install my-release --namespace spc --set=fullnameOverride=database-server -f helm/spring-petclinic-database-server/values.yaml stable/mysql
+helm upgrade --install --reset-values my-release --namespace spc --set=fullnameOverride=database-server -f helm/spring-petclinic-database-server/values.yaml stable/mysql
 
 # database server for petclinic application
 # helm upgrade --install --reset-values \
