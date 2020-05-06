@@ -8,6 +8,7 @@ image:
   repository: registry.gitlab.com/opentracing-workshop/spring-petclinic-kubernetes/spring-petclinic-config-server
   tag: latest
   pullPolicy: Always
+  imagePullSecrets: regcred
 
 nameOverride: ""
 fullnameOverride: ""
