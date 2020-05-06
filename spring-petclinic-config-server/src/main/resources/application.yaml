@@ -1,0 +1,6 @@
+# keep it standard
+server.port: 8888
+spring.application.name: config-server
+
+# Logging
+logging.level.org.springframework: INFO
