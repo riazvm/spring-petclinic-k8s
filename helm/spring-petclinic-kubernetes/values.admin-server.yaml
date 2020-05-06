@@ -23,7 +23,7 @@ ingress:
     kubernetes.io/ingress.class: nginx
   path: /
   hosts:
-  - admin.spc.lab.nashdocker.io
+  - admin.spc.corp.local
   tls: []
 
 jaeger:
